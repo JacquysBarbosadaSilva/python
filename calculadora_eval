@@ -5,5 +5,5 @@ print('=' * 55)
 numeros = input('')
 
 for conta in numeros:
-    resultado = eval(numeros) #eval avalia diretamente uma expressão matemática em python      
+    resultado = eval(numeros) #eval avalia diretamente uma expressão matemática que o usuário digitar      
 print('O resultado da sua conta é: {}'.format(resultado))
