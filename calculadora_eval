@@ -1,0 +1,9 @@
+print ('=' * 55)
+print('Digite qual a conta que deseja realizar: x operação y')
+print('=' * 55)
+
+numeros = input('')
+
+for conta in numeros:
+    resultado = eval(numeros) #eval avalia diretamente uma expressão matemática em python      
+print('O resultado da sua conta é: {}'.format(resultado))
