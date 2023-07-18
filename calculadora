@@ -1,22 +1,28 @@
 print ('=' * 55)
 print('Digite qual a conta que deseja realizar: x operação y')
 print('=' * 55)
-numeros = str(input('').strip())
+numeros = input('').strip()
+conta = []
 
-for conta in numeros:
+for i in numeros:
 
     if '+' in numeros:
         
-        print ()
+        resultado = 
+        print (resultado)
 
     elif '-' in numeros:
         
-        print ()
-
+        resultado = 
+        print(resultado) 
+       
     elif '.' in numeros:
         
-        print()
+        resultado = 
+        print(resultado) 
+        
 
     elif '/' in numeros:
         
-        print()
+        resultado = 
+        print(resultado) 
