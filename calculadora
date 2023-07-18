@@ -2,13 +2,9 @@ print ('=' * 55)
 print('Digite qual a conta que deseja realizar: x operação y')
 print('=' * 55)
 numeros = str(input('')).strip()
-# float(numeros)
-mais = numeros.count('+')
-menos = numeros.count('-')
-multiplicação = numeros.count('.')
-divisão = numeros.count('/')
 
-for resultado in numeros:
-    if mais in numeros:
+for conta in numeros:
+    if '+' in numeros:
+
         resultado = sum(numeros)
         print (resultado)
