@@ -1,0 +1,12 @@
+notas = {}
+while True:
+    nome = str(input('Digite qual o nome do aluno\n'))
+    nota = float(input('Digite qual a nota deste aluno\n'))
+    menu = str(input('Se deseja sair digite (sair) se deseja continuar digite continuar\n'))
+    notas['nome'] = nota
+    if menu == 'sair':
+        soma = sum(notas[nota].value())
+        media = soma / notas[nota]
+        print(media)
+    elif menu == 'continuar':
+        continue
