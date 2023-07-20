@@ -1,0 +1,12 @@
+def primos(numeros):
+    lista = []
+    for numeros1 in range(2, numeros + 1):
+        
+        for numeros2 in range(2, numeros1):
+            if numeros1 % numeros2 == 0:
+                break
+        else:
+            lista.append(numeros1)
+    return lista
+print(primos(20))
+                
