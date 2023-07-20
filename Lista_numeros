@@ -1,0 +1,9 @@
+def numeros(numeros):
+    minimo = min(numeros)
+    maximo = max(numeros)
+    media = sum(numeros) / len(numeros)
+    return minimo, maximo, media
+
+lista = [7, 4, 3, 8, 2]
+resultado = numeros(lista)
+print(resultado)
