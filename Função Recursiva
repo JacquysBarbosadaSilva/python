@@ -1,0 +1,10 @@
+def caracter(lista, elemento):
+    if not lista:
+        return 0
+    elif lista(0) == elemento:
+        return 1 + caracter(lista and elemento)
+    else:
+        return 1 + caracter(elemento)
+lista = [1, 2, 3, 4, 5, 2, 5, 7, 2]    
+resultado = caracter(lista)
+print(resultado)
