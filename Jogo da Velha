@@ -1,0 +1,21 @@
+um = '1'
+dois = '2'
+tres = '3'
+quatro = '4'
+cinco = '5'
+seis = '6'
+sete = '7'
+oito = '8'
+nove = '9'
+while True:
+    def tabuleiro(jogo):
+        linha1 = print('  {}  |  {}  |  {}  '.format(um, dois, tres))
+        separar = print('-'* 18)
+        linha2 = print('  {}  |  {}  |  {}  '.format(quatro, cinco, seis))
+        separar = print('-'* 18)
+        linha3 = print('  {}  |  {}  |  {}  '.format(sete, oito, nove))
+    print(tabuleiro(""))
+    pergunta = input('Jogador 1, digite o numero da casa em que deseja substituir por X: ')
+    if pergunta == 1:
+        um == tabuleiro(um).replace('x')
+        print(tabuleiro(''))
