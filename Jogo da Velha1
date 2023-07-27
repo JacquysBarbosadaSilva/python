@@ -1,0 +1,59 @@
+tabuleiro = [
+    [" ", " ", " "],
+    [" ", " ", " "],        # Tabuleiro
+    [" ", " ", " "]
+]
+
+def exibicao_tabuleiro(tabuleiro):  # Esta função está determinando o tabuleiro do jogo da velha
+    for linha in tabuleiro:  # for - serve para colocar o separador de coluna junto com o .join
+        print("|".join(linha))
+        print("-------")  # Print para separar em linhas
+
+def verificacao_de_jogo(tabuleiro):  # Esta função está verificando se existe algum fim para o jogo
+    for linha in tabuleiro:  # Este for está verificando as linhas
+        if (linha[0] == linha[1] == linha[2] and linha[0] != " "):  # Nesta parte o programa esta verificando as linhas do tabuleiro, este != verifica se não tem nenhum caracter igual a algum espaço vazio
+            return True
+
+    for coluna in range(3):  # Este for está verificando as colunas
+        if (tabuleiro[0][coluna] == tabuleiro[1][coluna] == tabuleiro[2][coluna] and tabuleiro[0][coluna] != " "):  # Nesta parte o programa esta verificando as colunas do tabuleiro, este != verifica se não tem nenhum caracter igual a algum espaço vazio
+            return True
+
+    if (tabuleiro[0][0] == tabuleiro[1][1] == tabuleiro[2][2] and tabuleiro[0][0] != " "):
+        return True  # Neste caso, está verificando a diagonal principal
+
+    if (tabuleiro[0][2] == tabuleiro[1][1] == tabuleiro[2][0] and tabuleiro[0][2] != " "):
+        return True  # Neste caso, está verificando a diagonal secundária
+
+    if all(tabuleiro[linhas][colunas] != " " for linhas in range(3) for colunas in range(3)):  # Este if está verificando se todas as casas do tabuleiro estão preenchidas em caso de empate
+        return True
+
+    # Se nenhuma das condições acima acontecer, então o jogo ainda está em andamento
+    return False
+
+def jogo():
+    jogador1 = "X"
+
+    while not verificacao_de_jogo(tabuleiro):  # O While not repete o processo do jogo até que o jogo acabe, no caso de um ganhador ou um empate
+        exibicao_tabuleiro(tabuleiro)  # Exibe o tabuleiro para mostrar quais casas estão disponíveis
+
+        linha = int(input(f"Jogador {jogador1}, escolha em qual linha deseja jogar (0, 1 ou 2):"))  # Determinar qual linha o jogador deseja jogar
+        coluna = int(input(f"Agora {jogador1}, escolha a coluna que deseja jogar (0, 1 ou 2):"))  # Determinar qual coluna o jogador deseja jogar
+
+        if tabuleiro[linha][coluna] == " ":  # Verifica se a casa que o jogador selecionou está vazia, se estiver vazia a ação do jogador será realizada
+            tabuleiro[linha][coluna] = jogador1  # Atribui a jogada do jogador ao tabuleiro se o espaço estiver vazio
+            jogador1 = "X" if jogador1 == "O" else "O"  # Atualiza o jogador, utilizando uma alternância
+        else:  # Acontece quando a casa estiver ocupada
+            print("Esta posição já está ocupada")
+
+    exibicao_tabuleiro(tabuleiro)  # Exibe o tabuleiro
+    print("O primeiro jogador é o X")
+
+    if verificacao_de_jogo(tabuleiro):  #Aqui é onde decide quem ganhou ou se resultou em empate
+        if jogador1 == "X":
+            print("Parabéns, Jogador O você venceu")
+        elif jogador1 == "O":
+            print("Parabéns, Jogador X venceu")
+        else:
+            print("Ninguém venceu, EMPATE")
+
+jogo()
