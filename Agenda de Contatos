@@ -16,5 +16,7 @@ while True:
            nome = str(input('Digite qual o nome associado ao numero de telefone que deseja pesquisar. \n'))
            if nome in agenda:
                 print('O numero associado a esse contato é: {}'.format(agenda[nome]))
+           else:
+                print('Nao ha nenhum contato na agenda com esse nome ou numero')
     elif opçao == '4':
            break
